@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import { AddKPI } from './pages/add-kpi/Add-kpi';
+import { AddPime } from './pages/add-pime/Add-pime';
+import { Dashboard } from './pages/dashboard/Dashborad';
+import { Login } from './pages/login/Login';
+import { Header } from './componets/header/Header';
+
+
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header> </Header>
+      <Routes>
+        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/add-pime" element={<AddPime/>}/>
+        <Route path="/add-kpi" element={<AddKPI/>}/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
+    </Router>
   );
 }
+
 
 export default App;
